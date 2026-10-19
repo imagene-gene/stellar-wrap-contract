@@ -28,6 +28,12 @@ extern crate std;
 
 use soroban_sdk::{contract, contractimpl, Address, Bytes, BytesN, Env, String, Symbol, Vec};
 
+// Embedded in the WASM `contractmetav0` section. `GIT_SHA` and `BUILD_PROFILE`
+// are injected by build.rs.
+soroban_sdk::contractmeta!(key = "source_repo", val = "github:zintarh/stellar-wrap-contract");
+soroban_sdk::contractmeta!(key = "commit", val = env!("GIT_SHA"));
+soroban_sdk::contractmeta!(key = "build_profile", val = env!("BUILD_PROFILE"));
+
 mod admin;
 mod alias;
 mod bridge;
