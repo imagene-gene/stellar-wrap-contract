@@ -5,6 +5,9 @@
 2.  **Clone** your fork locally.
 3.  Create a new **Branch** for this specific issue (e.g., `feat/mint-logic` or `ci/setup-actions`).
 
+**Step 1a: Dev Container (optional)**
+To skip local toolchain installs, open the repository in VS Code (Dev Containers extension) or GitHub Codespaces and choose **Reopen in Container**. The container provides the pinned Rust toolchain (`rust-toolchain.toml`), the `wasm32-unknown-unknown` target, Stellar CLI, cargo-mutants, cargo-fuzz, Node 20 and `wasm-opt`. On creation it runs `make build && make test` once. Run `make test` again afterwards to re-check your changes.
+
 **Step 2: Standards**
 * **Clean Commits:** Use descriptive commit messages (e.g., `feat: implement mint function` not `fix`).
 * **No Force Pushing:** If you need to change something, add a new commit or squash locally before pushing.
